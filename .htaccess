@@ -1,0 +1,6 @@
+RewriteEngine On
+# Si el archivo o carpeta existe, úsalo directamente
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+# Si no existe (como /usuarios/login), mándalo todo al index.php
+RewriteRule ^ index.php [QSA,L]
